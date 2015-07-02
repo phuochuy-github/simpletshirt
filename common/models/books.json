@@ -1,0 +1,37 @@
+{
+  "name": "books",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "numberPages": {
+      "type": "string"
+    },
+    "categoryId": {
+      "type": "number",
+      "required": false,
+      "index": true
+    },
+    "bookId": {
+      "type": "number",
+      "id": true,
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "category": {
+      "type": "hasOne",
+      "model": "category",
+      "foreignKey": "id"
+    }
+  },
+  "acls": [],
+  "methods": []
+}
